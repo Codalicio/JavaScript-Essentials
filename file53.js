@@ -1,3 +1,4 @@
 // Parameter Destructuring:
 
-console.log(9);
+const func2 = num => num % 2 === 0;
+console.log(func2(4));
