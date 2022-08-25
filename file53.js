@@ -27,3 +27,9 @@ function printDetails({firstName: name, age, gender}) {
 
 printDetails(person);
 
+// Array
+
+const myArray = ['Amit', 'Raj', 25];
+const myArrayFunc = ([firstName, lastName, age]) => (`firstName: ${firstName}, lastName: ${lastName}, age: ${age}.`);
+console.log(myArrayFunc(myArray));
+
