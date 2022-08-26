@@ -68,8 +68,8 @@ users.forEach((user, index) => {console.log(`${user["firstName"]}, Index is ${in
 //     console.log(user.firstName);
 // };
 
-// map() method, vry useful in React:
-// map method also takes callback function as an input.
+// map() method, very useful in React:
+// map() method also takes callback function as an input.
 // The callback function must always use the 'return' statement as it always gives a 'new array' as an output.
 
 const ints = [6, 8, 5, 4];
@@ -116,9 +116,41 @@ for(let customerName of customerNames) {
     console.log(customerName);
 };
 
-// filter() function:
+// filter() method:
+// filter() method also takes a callback function as an input.
+// The callback function of filter() method must always 'return' a 'Boolean value'; i.e., either 'True or False'.
 
+const numbArray = [1, 3, 2, 4, 6, 9];
 
+// Even Numbers:
 
-// reduce():
+const isEven = number => number % 2 === 0;
+
+const evenNumbers = numbArray.filter(isEven);
+console.log(evenNumbers);
+
+evenNumbers.forEach(number => console.log(number));
+
+// Or,
+// Odd Numbers:
+
+const oddNumbers = numbArray.filter(number => number % 2 !== 0);
+console.log(oddNumbers);
+
+oddNumbers.forEach(number => console.log(number));
+
+// Alternate:
+
+const isOdd = (number) => {
+    return (number % 2 !== 0);
+};
+
+const oddNumbersArray = numbArray.filter(isOdd);
+console.log(oddNumbersArray);
+
+const odd = number => console.log(number);
+
+oddNumbersArray.forEach(odd);
+
+// reduce() method:
 
