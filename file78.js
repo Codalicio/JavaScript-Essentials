@@ -1,26 +1,26 @@
 // proto, prototype, class
 // Object-oriented Programming (OOP):
 
-// const user = {
-//     firstName: 'Harshit',
-//     lastName: 'Vashistha',
-//     email: 'harshitvashistha@gmail.com',
-//     age: 19,
-//     address: 'House Number, Colony, Pin-Code, State',
-//     about() {
-//         console.log(`${this.firstName} ${this.lastName} is ${this.age} years old!`);
-//     },
-//     is18() {
-//         return this.age >= 18;
-//     }
-// };
+const user = {
+    firstName: 'Harshit',
+    lastName: 'Vashistha',
+    email: 'harshitvashistha@gmail.com',
+    age: 19,
+    address: 'House Number, Colony, Pin-Code, State',
+    about() {
+        return (`${this.firstName} ${this.lastName} is ${this.age} years old!`);
+    },
+    is18() {
+        return this.age >= 18;
+    }
+};
 
-// user.about();
+// console.log(user.about());
 
 // const aboutUser = user.about;
-// aboutUser.bind(user).call();
+// console.log(aboutUser.bind(user).call());
 
-// Creating a function to create many objects:
+// Creating a function to create many objects (Part - 1):
 
 function createUser(firstName, lastName, email, age, address) {
     const user = {};
@@ -30,12 +30,12 @@ function createUser(firstName, lastName, email, age, address) {
         user.age = age;
         user.address = address;
         user.about = function() {
-            console.log(`${this.firstName} ${this.lastName} is ${this.age} years old!`);
+            return (`${this.firstName} ${this.lastName} is ${this.age} years old!`);
         },
         user.is18 = function() {
             return this.age >= 18;
         }
-        return user;
+        return user
 };
 
 const user1 = createUser('Harshit', 'Singh', 'harshsingh@gmail.com', 17, 'My address');
@@ -49,6 +49,6 @@ const is18 = user2.is18();
 console.log(is18);
 
 const aboutUser = user1.about;
-aboutUser.bind(user1).call();
+console.log(aboutUser.call(user1));
 // const aboutUser = user2.about;
-// aboutUser.bind(user2).call();
+// console.log(aboutUser.call(user2));
